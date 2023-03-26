@@ -1,0 +1,34 @@
+<p>Determiner les revenus de ces differents pilotes </p>
+<p class="minimum2">(Points total minimum groupe conseillers + groupe 
+animateurs = 10000 )</p>
+<div class="block5">
+<label for="points" class="label6">Entrez points groupe 
+conseillers</label>
+<input type="number" class="montant Entrer 6" id="montant6"> 
+</div>
+<div class="block6">
+<label for="points montant" class="label7">Entrez points groupe 
+animateurs</label>
+<input type="number" class="montant Entrer 7" id="montant7">
+<input type="submit" value="Commissions pilote qualifié" id="submit7" 
+class="submitEnter7" onclick="calcAmount()">
+</div>
+<p id="montantmarge6" class="Entrer cette marge">0€</p>
+</div>
+</div>
+<script>
+
+function calcAmount()  // la fonction qui gere tout le bouton a soumettre et effectue le calcul
+{
+  var usermontant5 = document.getElementById("montant6").value;
+  var usermontant6 = document.getElementById("montant7").value;
+  var firstlevel = 10000;
+  if (usermontant5 + usermontant6 < firstlevel) {
+    document.getElementById("montantmarge6").textContent = "Mrs vous n'etes pas qualifies";
+  } else if (usermontant5+ usermontant6 >= firstlevel) {
+    document.getElementById("montantmarge6").textContent =
+      Math.round(usermontant5 * 13 / 100) + (usermontant6 * 5 / 100) + "€";
+  }
+}
+
+</script>
